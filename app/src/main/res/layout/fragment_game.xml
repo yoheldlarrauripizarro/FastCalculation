@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".GameFragment">
+
+    <TextView
+        android:id="@+id/roundTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <TextView
+        android:id="@+id/questionTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1+2"
+        android:textSize="64sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundTv"
+        />
+    <LinearLayout
+        android:id="@+id/alternativesLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionTv">
+
+        <Button
+            android:id="@+id/alternativeOneBt"
+            style="@style/GameButton"/>
+        <Button
+            android:id="@+id/alternativeTwoBt"
+            style="@style/GameButton"/>
+        <Button
+            android:id="@+id/alternativeThreeBt"
+            style="@style/GameButton"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
