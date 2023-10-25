@@ -18,5 +18,5 @@
     </string-array>
     <string name="welcome">Welcome</string>
     <string name="play">Play</string>
-    <string name="points">Points</string>
+    <string name="reiniciar_jogo">Reiniciar Jogo</string>
 </resources>

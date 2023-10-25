@@ -11,7 +11,6 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.Button
 import br.edu.scl.ifsp.sdm.fastcalculation.Extras.EXTRA_SETTINGS
-import br.edu.scl.ifsp.sdm.fastcalculation.databinding.ActivityGameBinding
 import br.edu.scl.ifsp.sdm.fastcalculation.databinding.FragmentGameBinding
 
 
@@ -92,11 +91,15 @@ class GameFragment : Fragment() {
             roundDeadLineHandler.sendEmptyMessageDelayed(MSG_ROUND_DEADLINE, settings.roundInterval)
         }else{
             with(fragmentGameBinding){
-                roundTv.text = getString(R.string.points)
+                //roundTv.text = getString(R.string.points)
                 val points = hits*10f/(totalGameTime/1000L)
-                "%.1f".format(points).also{
+
+                /*"%.1f".format(points).also{
                     questionTv.text = it
-                }
+                }*/
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.gameFl, ResultFragment.newInstance(settings, points))
+                    .commit()
                 alternativeOneBt.visibility=View.GONE
                 alternativeTwoBt.visibility=View.GONE
                 alternativeThreeBt.visibility=View.GONE
