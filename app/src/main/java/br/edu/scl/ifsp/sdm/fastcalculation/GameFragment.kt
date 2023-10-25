@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import br.edu.scl.ifsp.sdm.fastcalculation.Extras.EXTRA_SETTINGS
 import br.edu.scl.ifsp.sdm.fastcalculation.databinding.FragmentGameBinding
+import java.text.DecimalFormat
 
 
 class GameFragment : Fragment() {
@@ -92,7 +93,7 @@ class GameFragment : Fragment() {
         }else{
             with(fragmentGameBinding){
                 //roundTv.text = getString(R.string.points)
-                val points = hits*10f/(totalGameTime/1000L)
+                val points = DecimalFormat("#.00").format(hits*10000f/(totalGameTime)).toFloat()
 
                 /*"%.1f".format(points).also{
                     questionTv.text = it
